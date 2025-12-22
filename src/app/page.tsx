@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Hour 3
+            🚀 Project Status: Hour 4
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -34,10 +34,17 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🔄</span>
+              <span className="text-2xl">✅</span>
               <div>
                 <p className="font-semibold text-gray-900">Hour 3: Vector DB Integration</p>
                 <p className="text-sm text-gray-600">MongoDB Atlas + OpenAI embeddings</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🔄</span>
+              <div>
+                <p className="font-semibold text-gray-900">Hour 4: API Endpoints</p>
+                <p className="text-sm text-gray-600">REST API for analysis & search</p>
               </div>
             </div>
           </div>
@@ -68,7 +75,11 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-gray-500 text-sm">
-          <p>🔨 Hour 3/12 In Progress • MongoDB Atlas Vector Search integration</p>
+          <p>🔨 Hour 4/12 Complete • REST API endpoints ready for testing</p>
+          <p className="mt-2 text-xs">
+            🧪 Test: <a href="/api/health" className="text-blue-600 hover:underline">/api/health</a> • 
+            <a href="/api/db-test" className="text-blue-600 hover:underline ml-2">/api/db-test</a>
+          </p>
         </footer>
       </div>
     </main>
