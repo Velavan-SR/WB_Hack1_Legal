@@ -189,7 +189,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 ### **Day 1: Architecture** ✅
 - [x] Hour 1: Project scaffolding + documentation
 - [x] Hour 2: PDF/text parsing setup + data models
-- [ ] Hour 3: MongoDB Atlas Vector DB integration
+- [x] Hour 3: MongoDB Atlas Vector DB integration
 - [ ] Hour 4: Environment config + basic API endpoints
 
 ### **Day 2: AI Logic**

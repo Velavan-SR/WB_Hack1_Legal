@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Hour 2
+            🚀 Project Status: Hour 3
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -27,10 +27,17 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🔄</span>
+              <span className="text-2xl">✅</span>
               <div>
                 <p className="font-semibold text-gray-900">Hour 2: Text Parsing & Data Models</p>
                 <p className="text-sm text-gray-600">PDF/URL parsers, TypeScript types</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🔄</span>
+              <div>
+                <p className="font-semibold text-gray-900">Hour 3: Vector DB Integration</p>
+                <p className="text-sm text-gray-600">MongoDB Atlas + OpenAI embeddings</p>
               </div>
             </div>
           </div>
@@ -61,7 +68,7 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-gray-500 text-sm">
-          <p>🔨 Hour 2/12 In Progress • Building text parsers & data models</p>
+          <p>🔨 Hour 3/12 In Progress • MongoDB Atlas Vector Search integration</p>
         </footer>
       </div>
     </main>
