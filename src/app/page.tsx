@@ -1,0 +1,69 @@
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-8">
+      <div className="max-w-4xl mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            🛡️ AI Legal Clause Analyzer
+          </h1>
+          <p className="text-xl text-gray-600">
+            Your digital lawyer for Terms & Conditions
+          </p>
+          <div className="mt-4 inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold">
+            ⚡ Winter Bootcamp Hackathon 2025
+          </div>
+        </header>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">
+            🚀 Project Status: Hour 2
+          </h2>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <p className="font-semibold text-gray-900">Hour 1: Foundation Complete</p>
+                <p className="text-sm text-gray-600">Config files & architecture docs</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🔄</span>
+              <div>
+                <p className="font-semibold text-gray-900">Hour 2: Text Parsing & Data Models</p>
+                <p className="text-sm text-gray-600">PDF/URL parsers, TypeScript types</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <div className="text-3xl mb-3">🔴</div>
+            <h3 className="font-bold text-lg mb-2 text-red-900">Red Flags</h3>
+            <p className="text-sm text-red-700">
+              High-risk clauses that take away user rights
+            </p>
+          </div>
+          <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-6">
+            <div className="text-3xl mb-3">🟡</div>
+            <h3 className="font-bold text-lg mb-2 text-yellow-900">Yellow Flags</h3>
+            <p className="text-sm text-yellow-700">
+              Medium-risk clauses requiring attention
+            </p>
+          </div>
+          <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+            <div className="text-3xl mb-3">🟢</div>
+            <h3 className="font-bold text-lg mb-2 text-green-900">Green Flags</h3>
+            <p className="text-sm text-green-700">
+              Standard clauses with fair terms
+            </p>
+          </div>
+        </div>
+
+        <footer className="text-center text-gray-500 text-sm">
+          <p>🔨 Hour 2/12 In Progress • Building text parsers & data models</p>
+        </footer>
+      </div>
+    </main>
+  );
+}
