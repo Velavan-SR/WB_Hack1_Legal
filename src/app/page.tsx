@@ -16,35 +16,21 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Hour 4
+            🚀 Project Status: Day 2, Hour 5
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 1: Foundation Complete</p>
-                <p className="text-sm text-gray-600">Config files & architecture docs</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✅</span>
-              <div>
-                <p className="font-semibold text-gray-900">Hour 2: Text Parsing & Data Models</p>
-                <p className="text-sm text-gray-600">PDF/URL parsers, TypeScript types</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✅</span>
-              <div>
-                <p className="font-semibold text-gray-900">Hour 3: Vector DB Integration</p>
-                <p className="text-sm text-gray-600">MongoDB Atlas + OpenAI embeddings</p>
+                <p className="font-semibold text-gray-900">Day 1 Complete (4/4 hours)</p>
+                <p className="text-sm text-gray-600">Architecture & API foundation ready</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-2xl">🔄</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 4: API Endpoints</p>
-                <p className="text-sm text-gray-600">REST API for analysis & search</p>
+                <p className="font-semibold text-gray-900">Hour 5: LangChain Prompts & Classification</p>
+                <p className="text-sm text-gray-600">Clause analysis with GPT-4 Turbo</p>
               </div>
             </div>
           </div>
@@ -75,11 +61,7 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-gray-500 text-sm">
-          <p>🔨 Hour 4/12 Complete • REST API endpoints ready for testing</p>
-          <p className="mt-2 text-xs">
-            🧪 Test: <a href="/api/health" className="text-blue-600 hover:underline">/api/health</a> • 
-            <a href="/api/db-test" className="text-blue-600 hover:underline ml-2">/api/db-test</a>
-          </p>
+          <p>🔨 Day 2, Hour 5/12 • LangChain clause classification & risk detection ready</p>
         </footer>
       </div>
     </main>

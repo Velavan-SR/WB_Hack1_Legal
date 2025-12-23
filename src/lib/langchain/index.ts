@@ -14,3 +14,19 @@ export {
   indexClause,
   indexClauses,
 } from './vectorStore';
+
+export {
+  getLLM,
+  classifyClause,
+  analyzeDocument,
+  detectRisks,
+  translateToPlainEnglish,
+  answerClauseQuestion,
+} from './classifier';
+
+export {
+  analyzeClause,
+  analyzeMultipleClauses,
+  calculateDocumentRiskScore,
+  generateAnalysisSummary,
+} from './clauseAnalyzer';

@@ -192,11 +192,11 @@ Visit [http://localhost:3000](http://localhost:3000)
 - [x] Hour 3: MongoDB Atlas Vector DB integration
 - [x] Hour 4: REST API endpoints (analyze, search, health checks)
 
-### **Day 2: AI Logic**
-- [ ] Hour 5: LangChain prompt templates
-- [ ] Hour 6: Red/Yellow/Green flag detection
-- [ ] Hour 7: RAG pipeline for clause search
-- [ ] Hour 8: Function calling for queries
+### **Day 2: AI Logic** 🚀
+- [X] Hour 5: LangChain prompt templates for clause classification
+- [ ] Hour 6: Red/Yellow/Green flag detection logic
+- [ ] Hour 7: RAG pipeline for clause search + "Plain English" translation
+- [ ] Hour 8: Function calling for specific queries
 
 ### **Day 3: Deployment**
 - [ ] Hour 9: Next.js UI with Tailwind
