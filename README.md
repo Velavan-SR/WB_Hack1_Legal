@@ -196,7 +196,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 - [X] Hour 5: LangChain prompt templates for clause classification
 - [X] Hour 6: Red/Yellow/Green flag detection logic
 - [X] Hour 7: RAG pipeline for clause search + "Plain English" translation
-- [ ] Hour 8: Function calling for specific queries
+- [X] Hour 8: Function calling for structured legal queries (7 functions)
 
 ### **Day 3: Deployment**
 - [ ] Hour 9: Next.js UI with Tailwind

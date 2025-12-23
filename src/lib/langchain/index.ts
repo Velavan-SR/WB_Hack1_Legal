@@ -38,3 +38,17 @@ export {
   findAndExplainClause,
   askAboutTerms,
 } from './rag';
+
+// Function Calling
+export {
+  legalFunctions,
+  findCancellationClause,
+  findPrivacyClause,
+  findDataSharingClause,
+  findPaymentClause,
+  findLiabilityClause,
+  analyzeSpecificRisk,
+  compareClauses,
+  routeFunctionCall,
+  processLegalQuery,
+} from './functionCalling';

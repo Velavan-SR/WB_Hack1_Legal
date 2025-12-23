@@ -58,3 +58,24 @@ export function sanitizeInput(input: string): string {
     .replace(/javascript:/gi, '') // Remove javascript: protocol
     .trim();
 }
+
+/**
+ * Validates query string for legal queries
+ */
+export function validateQuery(query: string): { isValid: boolean; error?: string } {
+  if (!query || typeof query !== 'string') {
+    return { isValid: false, error: 'Query must be a non-empty string' };
+  }
+
+  const trimmed = query.trim();
+  
+  if (trimmed.length < 3) {
+    return { isValid: false, error: 'Query must be at least 3 characters long' };
+  }
+
+  if (trimmed.length > 500) {
+    return { isValid: false, error: 'Query must be less than 500 characters' };
+  }
+
+  return { isValid: true };
+}

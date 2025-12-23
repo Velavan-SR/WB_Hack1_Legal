@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Day 2, Hour 7
+            🚀 Project Status: Day 2, Hour 8
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -34,10 +34,10 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🔄</span>
+              <span className="text-2xl">✅</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 7: RAG Pipeline</p>
-                <p className="text-sm text-gray-600">Vector search + Plain English translation</p>
+                <p className="font-semibold text-gray-900">Hour 7-8: RAG + Function Calling</p>
+                <p className="text-sm text-gray-600">Vector search + structured legal queries</p>
               </div>
             </div>
           </div>
