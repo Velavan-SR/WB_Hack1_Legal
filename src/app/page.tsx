@@ -16,28 +16,28 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Day 2, Hour 6
+            🚀 Project Status: Day 2, Hour 7
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="text-2xl">✅</span>
               <div>
                 <p className="font-semibold text-gray-900">Day 1 Complete (4/4 hours)</p>
-                <p className="text-sm text-gray-600">Architecture & API foundation ready</p>
+                <p className="text-sm text-gray-600">Architecture & API foundation</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 5: LangChain Prompts</p>
-                <p className="text-sm text-gray-600">GPT-4 classification chains</p>
+                <p className="font-semibold text-gray-900">Hour 5-6: AI Classification</p>
+                <p className="text-sm text-gray-600">GPT-4 + pattern-based risk detection</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-2xl">🔄</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 6: Red/Yellow/Green Flag Detection</p>
-                <p className="text-sm text-gray-600">Pattern + AI risk analysis system</p>
+                <p className="font-semibold text-gray-900">Hour 7: RAG Pipeline</p>
+                <p className="text-sm text-gray-600">Vector search + Plain English translation</p>
               </div>
             </div>
           </div>
@@ -68,9 +68,9 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-gray-500 text-sm">
-          <p>🔨 Day 2, Hour 6/12 • Full risk detection system with AI + pattern matching</p>
+          <p>🔨 Day 2, Hour 7/12 • RAG pipeline with plain English translations ready</p>
           <p className="mt-2 text-xs">
-            🧪 Test: POST to <span className="font-mono">/api/analyze</span> with your Terms & Conditions
+            🧪 Try: POST <span className="font-mono">/api/search</span> with mode: ask, explain, enhanced
           </p>
         </footer>
       </div>

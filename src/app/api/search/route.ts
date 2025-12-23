@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { searchSimilarClauses } from '@/lib/langchain';
+import { ragSearch, enhancedRAGSearch, findAndExplainClause, askAboutTerms } from '@/lib/langchain/rag';
 
 /**
  * POST /api/search
- * Searches for similar clauses using semantic search
+ * Semantic search with RAG and plain English translation
  */
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { query, limit = 5 } = body;
+    const { query, mode = 'simple', limit = 5 } = body;
 
     // Validate input
     if (!query || typeof query !== 'string') {
@@ -25,20 +25,50 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Perform semantic search
-    const results = await searchSimilarClauses(query, Math.min(limit, 20));
+    // Different search modes
+    switch (mode) {
+      case 'simple':
+        // Simple RAG search with answer
+        const simpleResult = await ragSearch(query);
+        return NextResponse.json({
+          success: true,
+          mode: 'simple',
+          result: simpleResult,
+        });
 
-    return NextResponse.json({
-      success: true,
-      query,
-      resultsCount: results.length,
-      results: results.map((result) => ({
-        text: result.text,
-        category: result.metadata.category,
-        riskLevel: result.metadata.riskLevel,
-        source: result.metadata.sourceUrl,
-      })),
-    });
+      case 'enhanced':
+        // Enhanced search with multiple context clauses
+        const enhancedResult = await enhancedRAGSearch(query);
+        return NextResponse.json({
+          success: true,
+          mode: 'enhanced',
+          result: enhancedResult,
+        });
+
+      case 'explain':
+        // Find and explain relevant clauses
+        const explainResults = await findAndExplainClause(query);
+        return NextResponse.json({
+          success: true,
+          mode: 'explain',
+          results: explainResults.slice(0, limit),
+        });
+
+      case 'ask':
+        // Question answering mode
+        const askResult = await askAboutTerms(query);
+        return NextResponse.json({
+          success: true,
+          mode: 'ask',
+          result: askResult,
+        });
+
+      default:
+        return NextResponse.json(
+          { error: 'Invalid mode. Use: simple, enhanced, explain, or ask' },
+          { status: 400 }
+        );
+    }
   } catch (error) {
     console.error('Search error:', error);
 
@@ -60,14 +90,28 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({
     endpoint: '/api/search',
     method: 'POST',
-    description: 'Searches for similar legal clauses using semantic search',
+    description: 'RAG-powered semantic search with plain English translations',
     requestBody: {
-      query: 'string (search query)',
-      limit: 'number (optional, default: 5, max: 20)',
+      query: 'string (search query or question)',
+      mode: '"simple" | "enhanced" | "explain" | "ask" (default: simple)',
+      limit: 'number (optional, for explain mode)',
     },
-    example: {
-      query: 'How do I cancel my subscription?',
-      limit: 5,
+    modes: {
+      simple: 'Quick answer with RAG (recommended for questions)',
+      enhanced: 'Multi-clause context with comprehensive answer',
+      explain: 'Find clauses and translate to plain English',
+      ask: 'Q&A with detailed explanation and risks',
     },
+    examples: [
+      {
+        query: 'How do I cancel my subscription?',
+        mode: 'ask',
+      },
+      {
+        query: 'data privacy',
+        mode: 'explain',
+        limit: 3,
+      },
+    ],
   });
 }

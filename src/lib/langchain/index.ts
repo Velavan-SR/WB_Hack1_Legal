@@ -30,3 +30,11 @@ export {
   calculateDocumentRiskScore,
   generateAnalysisSummary,
 } from './clauseAnalyzer';
+
+export {
+  ragSearch,
+  batchTranslateToPlainEnglish,
+  enhancedRAGSearch,
+  findAndExplainClause,
+  askAboutTerms,
+} from './rag';
