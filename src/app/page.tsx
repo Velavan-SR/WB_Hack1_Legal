@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Day 2, Hour 5
+            🚀 Project Status: Day 2, Hour 6
           </h2>
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -27,10 +27,17 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
+              <span className="text-2xl">✅</span>
+              <div>
+                <p className="font-semibold text-gray-900">Hour 5: LangChain Prompts</p>
+                <p className="text-sm text-gray-600">GPT-4 classification chains</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
               <span className="text-2xl">🔄</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 5: LangChain Prompts & Classification</p>
-                <p className="text-sm text-gray-600">Clause analysis with GPT-4 Turbo</p>
+                <p className="font-semibold text-gray-900">Hour 6: Red/Yellow/Green Flag Detection</p>
+                <p className="text-sm text-gray-600">Pattern + AI risk analysis system</p>
               </div>
             </div>
           </div>
@@ -61,7 +68,10 @@ export default function Home() {
         </div>
 
         <footer className="text-center text-gray-500 text-sm">
-          <p>🔨 Day 2, Hour 5/12 • LangChain clause classification & risk detection ready</p>
+          <p>🔨 Day 2, Hour 6/12 • Full risk detection system with AI + pattern matching</p>
+          <p className="mt-2 text-xs">
+            🧪 Test: POST to <span className="font-mono">/api/analyze</span> with your Terms & Conditions
+          </p>
         </footer>
       </div>
     </main>

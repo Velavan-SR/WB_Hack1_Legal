@@ -194,7 +194,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 
 ### **Day 2: AI Logic** 🚀
 - [X] Hour 5: LangChain prompt templates for clause classification
-- [ ] Hour 6: Red/Yellow/Green flag detection logic
+- [X] Hour 6: Red/Yellow/Green flag detection logic
 - [ ] Hour 7: RAG pipeline for clause search + "Plain English" translation
 - [ ] Hour 8: Function calling for specific queries
 
