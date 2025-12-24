@@ -3,11 +3,13 @@
 import { useState } from 'react';
 import ClauseAnalyzer from '@/components/ClauseAnalyzer';
 import RiskDisplay from '@/components/RiskDisplay';
+import RiskReport from '@/components/RiskReport';
 import ClauseSearch from '@/components/ClauseSearch';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<'analyze' | 'search'>('analyze');
   const [analysisResult, setAnalysisResult] = useState<any>(null);
+  const [showReport, setShowReport] = useState(false);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-4 md:p-8">
@@ -26,7 +28,7 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Day 3, Hour 9
+            🚀 Project Status: Day 3, Hour 10
           </h2>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -37,10 +39,17 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🔄</span>
+              <span className="text-2xl">✅</span>
               <div>
                 <p className="font-semibold text-gray-900">Hour 9: Interactive UI</p>
-                <p className="text-sm text-gray-600">Next.js components with Tailwind CSS</p>
+                <p className="text-sm text-gray-600">React components with Tailwind CSS</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🔄</span>
+              <div>
+                <p className="font-semibold text-gray-900">Hour 10: Risk Report Dashboard</p>
+                <p className="text-sm text-gray-600">Analytics, scoring, and export functionality</p>
               </div>
             </div>
           </div>
@@ -73,13 +82,39 @@ export default function Home() {
         {/* Main Content Area */}
         {activeTab === 'analyze' && (
           <div>
-            <ClauseAnalyzer />
-            {analysisResult && analysisResult.success && (
-              <div className="mt-6">
+            <ClauseAnalyzer onResultChange={setAnalysisResult} />
+            {analysisResult && analysisResult.success && !showReport && (
+              <div className="mt-6 space-y-6">
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setShowReport(true)}
+                    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition shadow-lg"
+                  >
+                    📊 View Full Report
+                  </button>
+                </div>
                 <RiskDisplay
                   redFlags={analysisResult.redFlags || []}
                   yellowFlags={analysisResult.yellowFlags || []}
                   greenFlags={analysisResult.greenFlags || []}
+                />
+              </div>
+            )}
+            {analysisResult && analysisResult.success && showReport && (
+              <div className="mt-6 space-y-6">
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => setShowReport(false)}
+                    className="px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition"
+                  >
+                    ← Back to Flags
+                  </button>
+                </div>
+                <RiskReport
+                  data={{
+                    ...analysisResult,
+                    analyzedAt: new Date().toISOString(),
+                  }}
                 />
               </div>
             )}

@@ -200,7 +200,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 
 ### **Day 3: Frontend & Deployment** 🎨
 - [X] Hour 9: Next.js UI with Tailwind CSS (ClauseAnalyzer, RiskDisplay, ClauseSearch)
-- [ ] Hour 10: Risk report display
+- [X] Hour 10: Risk report dashboard with analytics, scoring, and export
 - [ ] Hour 11: Docker containerization
 - [ ] Hour 12: Final polish + deployment
 

@@ -6,6 +6,7 @@ import { AlertCircle, FileText, Link as LinkIcon, Upload } from 'lucide-react';
 interface AnalysisResult {
   success: boolean;
   documentId?: string;
+  source?: string;
   redFlags?: any[];
   yellowFlags?: any[];
   greenFlags?: any[];
@@ -13,7 +14,11 @@ interface AnalysisResult {
   error?: string;
 }
 
-export default function ClauseAnalyzer() {
+interface ClauseAnalyzerProps {
+  onResultChange?: (result: AnalysisResult | null) => void;
+}
+
+export default function ClauseAnalyzer({ onResultChange }: ClauseAnalyzerProps = {}) {
   const [inputType, setInputType] = useState<'url' | 'text' | 'pdf'>('url');
   const [inputValue, setInputValue] = useState('');
   const [loading, setLoading] = useState(false);
@@ -41,12 +46,20 @@ export default function ClauseAnalyzer() {
       });
 
       const data = await response.json();
-      setResult(data);
+      const enrichedData = { ...data, source: inputValue };
+      setResult(enrichedData);
+      if (onResultChange) {
+        onResultChange(enrichedData);
+      }
     } catch (error) {
-      setResult({
+      const errorResult = {
         success: false,
         error: `Failed to analyze: ${error}`,
-      });
+      };
+      setResult(errorResult);
+      if (onResultChange) {
+        onResultChange(errorResult);
+      }
     } finally {
       setLoading(false);
     }
