@@ -184,7 +184,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📅 Development Roadmap
+## � Development Roadmap
 
 ### **Day 1: Architecture** ✅
 - [x] Hour 1: Project scaffolding + documentation
@@ -201,7 +201,7 @@ Visit [http://localhost:3000](http://localhost:3000)
 ### **Day 3: Frontend & Deployment** 🎨
 - [X] Hour 9: Next.js UI with Tailwind CSS (ClauseAnalyzer, RiskDisplay, ClauseSearch)
 - [X] Hour 10: Risk report dashboard with analytics, scoring, and export
-- [ ] Hour 11: Docker containerization
+- [X] Hour 11: Docker containerization with docker-compose
 - [ ] Hour 12: Final polish + deployment
 
 ---

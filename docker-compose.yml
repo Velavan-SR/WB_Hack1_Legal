@@ -1,16 +1,35 @@
+# Docker Compose Configuration
+# This makes it easy to run the containerized app with one command
+
 version: '3.8'
 
 services:
+  # Main Next.js application
   app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3000:3000"  # Maps container port 3000 to host port 3000
     environment:
+      # Production environment
       - NODE_ENV=production
+      # AI & Database credentials (loaded from .env.local)
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - MONGODB_URI=${MONGODB_URI}
       - MONGODB_DB_NAME=${MONGODB_DB_NAME}
       - MONGODB_COLLECTION_NAME=${MONGODB_COLLECTION_NAME}
-    restart: unless-stopped
+      # Optional: LangSmith observability
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2:-false}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY:-}
+      - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT:-legal-clause-analyzer}
+    env_file:
+      - .env.local  # Load environment variables from .env.local
+    restart: unless-stopped  # Auto-restart on failure
+    container_name: legal-analyzer
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

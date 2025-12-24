@@ -28,7 +28,7 @@ export default function Home() {
 
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Day 3, Hour 10
+            🚀 Project Status: Day 3, Hour 11
           </h2>
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -41,15 +41,15 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 9: Interactive UI</p>
-                <p className="text-sm text-gray-600">React components with Tailwind CSS</p>
+                <p className="font-semibold text-gray-900">Hour 9-10: UI + Analytics</p>
+                <p className="text-sm text-gray-600">Interactive dashboard with risk scoring</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-2xl">🔄</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 10: Risk Report Dashboard</p>
-                <p className="text-sm text-gray-600">Analytics, scoring, and export functionality</p>
+                <p className="font-semibold text-gray-900">Hour 11: Docker Containerization</p>
+                <p className="text-sm text-gray-600">Production-ready deployment with Docker Compose</p>
               </div>
             </div>
           </div>
