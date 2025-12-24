@@ -198,8 +198,8 @@ Visit [http://localhost:3000](http://localhost:3000)
 - [X] Hour 7: RAG pipeline for clause search + "Plain English" translation
 - [X] Hour 8: Function calling for structured legal queries (7 functions)
 
-### **Day 3: Deployment**
-- [ ] Hour 9: Next.js UI with Tailwind
+### **Day 3: Frontend & Deployment** 🎨
+- [X] Hour 9: Next.js UI with Tailwind CSS (ClauseAnalyzer, RiskDisplay, ClauseSearch)
 - [ ] Hour 10: Risk report display
 - [ ] Hour 11: Docker containerization
 - [ ] Hour 12: Final polish + deployment

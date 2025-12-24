@@ -1,7 +1,17 @@
+'use client';
+
+import { useState } from 'react';
+import ClauseAnalyzer from '@/components/ClauseAnalyzer';
+import RiskDisplay from '@/components/RiskDisplay';
+import ClauseSearch from '@/components/ClauseSearch';
+
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<'analyze' | 'search'>('analyze');
+  const [analysisResult, setAnalysisResult] = useState<any>(null);
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 p-4 md:p-8">
+      <div className="max-w-6xl mx-auto">
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             🛡️ AI Legal Clause Analyzer
@@ -14,36 +24,76 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            🚀 Project Status: Day 2, Hour 8
+            🚀 Project Status: Day 3, Hour 9
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <p className="font-semibold text-gray-900">Day 1 Complete (4/4 hours)</p>
-                <p className="text-sm text-gray-600">Architecture & API foundation</p>
+                <p className="font-semibold text-gray-900">Day 1-2 Complete (8/12 hours)</p>
+                <p className="text-sm text-gray-600">Full AI backend with RAG + Function calling</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-2xl">✅</span>
+              <span className="text-2xl">🔄</span>
               <div>
-                <p className="font-semibold text-gray-900">Hour 5-6: AI Classification</p>
-                <p className="text-sm text-gray-600">GPT-4 + pattern-based risk detection</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-2xl">✅</span>
-              <div>
-                <p className="font-semibold text-gray-900">Hour 7-8: RAG + Function Calling</p>
-                <p className="text-sm text-gray-600">Vector search + structured legal queries</p>
+                <p className="font-semibold text-gray-900">Hour 9: Interactive UI</p>
+                <p className="text-sm text-gray-600">Next.js components with Tailwind CSS</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        {/* Tab Navigation */}
+        <div className="flex gap-4 mb-6">
+          <button
+            onClick={() => setActiveTab('analyze')}
+            className={`flex-1 py-4 px-6 rounded-lg font-semibold transition ${
+              activeTab === 'analyze'
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-50 shadow'
+            }`}
+          >
+            📄 Analyze Document
+          </button>
+          <button
+            onClick={() => setActiveTab('search')}
+            className={`flex-1 py-4 px-6 rounded-lg font-semibold transition ${
+              activeTab === 'search'
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                : 'bg-white text-gray-700 hover:bg-gray-50 shadow'
+            }`}
+          >
+            🔍 Search Clauses
+          </button>
+        </div>
+
+        {/* Main Content Area */}
+        {activeTab === 'analyze' && (
+          <div>
+            <ClauseAnalyzer />
+            {analysisResult && analysisResult.success && (
+              <div className="mt-6">
+                <RiskDisplay
+                  redFlags={analysisResult.redFlags || []}
+                  yellowFlags={analysisResult.yellowFlags || []}
+                  greenFlags={analysisResult.greenFlags || []}
+                />
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'search' && (
+          <div>
+            <ClauseSearch />
+          </div>
+        )}
+
+        {/* Feature Info Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mt-8 mb-8">
           <div className="bg-red-50 border-2 border-red-200 rounded-lg p-6">
             <div className="text-3xl mb-3">🔴</div>
             <h3 className="font-bold text-lg mb-2 text-red-900">Red Flags</h3>
