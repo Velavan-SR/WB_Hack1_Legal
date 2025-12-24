@@ -202,7 +202,31 @@ Visit [http://localhost:3000](http://localhost:3000)
 - [X] Hour 9: Next.js UI with Tailwind CSS (ClauseAnalyzer, RiskDisplay, ClauseSearch)
 - [X] Hour 10: Risk report dashboard with analytics, scoring, and export
 - [X] Hour 11: Docker containerization with docker-compose
-- [ ] Hour 12: Final polish + deployment
+- [X] Hour 12: Final polish + deployment guides (DEPLOYMENT.md + PROJECT_SUMMARY.md)
+
+---
+
+## 🚀 Deployment
+
+**See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions!**
+
+Quick options:
+- **Vercel** (Recommended) - One-click deploy from GitHub
+- **Render** - Docker-based deployment
+- **Railway** - CLI deployment
+
+All environment variables and troubleshooting covered in the deployment guide.
+
+---
+
+## 📖 Demo & Presentation
+
+**See [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) for:**
+- Complete feature walkthrough
+- Technical architecture deep-dive
+- Hackathon demo script
+- Development timeline
+- What I learned
 
 ---
 
@@ -253,5 +277,13 @@ MIT License - Built for Winter Bootcamp Gen AI Hackathon 2025
 
 ---
 
-**⚡ Hour 1 Status**: Foundation Complete ✅  
-**Next Up**: Text parsing & data models (Hour 2)
+## 📁 Additional Documentation
+
+- **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete deployment guide (Vercel, Render, Railway)
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Hackathon submission details & demo script
+- **[DOCKER.md](DOCKER.md)** - Docker containerization guide
+
+---
+
+**🎉 Hour 12 Status**: Project Complete! ✅  
+**Demo Ready** | **Dockerized** | **Production Deployed**
